@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Jadwal Vaksinasi</string>
+    <string name="welcome">Silahkan Login</string>
+    <string name="icon_image">Icon Image</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="logout">LOGOUT</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="title_history">History</string>
+    <string name="title_point">Point</string>
+    <string name="title_notification">Notification</string>
+</resources>
