@@ -21,9 +21,4 @@ public interface BaseApiService {
 
     @GET("readHistory.php?")
     Call<List<HistoryModel>> getHistory(@Query("username") String username);
-
-    @FormUrlEncoded
-    @POST("saveRealisasi.php")
-    Call<ResponseBody> saveRealisasi(@Field("do_number") String username,
-                                    @Field("batch_number") String password);
 }
