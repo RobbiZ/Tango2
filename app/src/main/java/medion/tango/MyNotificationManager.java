@@ -86,6 +86,8 @@ public class MyNotificationManager {
 
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
         notification.defaults |= Notification.DEFAULT_SOUND;
+        notification.defaults |= Notification.DEFAULT_VIBRATE;
+        notification.priority |= Notification.PRIORITY_HIGH;
 
         NotificationManager notificationManager = (NotificationManager) mCtx.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(ID_SMALL_NOTIFICATION, notification);

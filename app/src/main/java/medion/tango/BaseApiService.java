@@ -17,6 +17,11 @@ public interface BaseApiService {
                                     @Field("password") String password,
                                     @Field("token") String token);
 
+    @FormUrlEncoded
+    @POST("tokenRefresh.php")
+    Call<ResponseBody> tokenRefresh(@Field("username") String username,
+                                    @Field("token") String token);
+
     @GET("readSchedule.php?")
     Call<List<ScheduleModel>> getSchedule(@Query("username") String username);
 
