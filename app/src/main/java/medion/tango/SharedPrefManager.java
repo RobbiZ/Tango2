@@ -19,6 +19,15 @@ public class SharedPrefManager {
     public static final String KEY_APLIKASI = "keyAplikasi";
     public static final String KEY_PRODUCTNAME = "keyProductName";
 
+    public static final String KEY_DONUMBER = "doNumber";
+    public static final String KEY_BATCH = "batch";
+    public static final String KEY_KMSTART = "kmStart";
+    public static final String KEY_KMFINISH = "kmFinish";
+    public static final String KEY_REMARK = "remark";
+    public static final String KEY_RESCHEDULE = "reSchedule";
+    public static final String KEY_NEWDATE = "newDate";
+    public static final String KEY_CANCEL = "cancel";
+
     private static final String SHARED_PREF_NAME = "FCMSharedPref";
     private static final String TAG_TOKEN = "tagtoken";
 

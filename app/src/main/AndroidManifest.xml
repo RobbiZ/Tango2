@@ -18,21 +18,16 @@
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/app_name" />
+
         <activity android:name=".ScheduleDetailActivity" />
+
+        <activity android:name=".HistoryDetailActivity" />
 
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".FirebaseTest">
-            <!---->
-        </activity>
-
-        <activity android:name=".FirebaseRegisterToken">
-            <!---->
         </activity>
 
         <activity android:name=".ScheduleRealisasiActivity">

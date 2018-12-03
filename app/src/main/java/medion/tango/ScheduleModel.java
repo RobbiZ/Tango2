@@ -59,16 +59,16 @@ public class ScheduleModel {
     public void setPlasmaName(String plasmaname) {this.plasmaname = plasmaname;}
 
     public String getAddress() {return address;}
-    public void setAddress(String address) {this.custname = address;}
+    public void setAddress(String address) {this.address = address;}
 
     public String getCity() {return city;}
-    public void setCity(String city) {this.custname = city;}
+    public void setCity(String city) {this.city = city;}
 
     public String getPhone() {return phone;}
-    public void setPhone(String phone) {this.custname = phone;}
+    public void setPhone(String phone) {this.phone = phone;}
 
     public String getArea() {return area;}
-    public void setArea(String area) {this.custname = area;}
+    public void setArea(String area) {this.area = area;}
 
     public String getTanggal() {return tanggal;}
     public void setTanggal(String tanggal) {this.tanggal = tanggal;}
@@ -80,11 +80,11 @@ public class ScheduleModel {
     public void setJenis(String jenis) {this.jenis = jenis;}
 
     public String getUmur() {return umur;}
-    public void setUmur(String umur) {this.custname = umur;}
+    public void setUmur(String umur) {this.umur = umur;}
 
     public String getAplikasi() {return aplikasi;}
-    public void setAplikasi(String aplikasi) {this.custname = aplikasi;}
+    public void setAplikasi(String aplikasi) {this.aplikasi= aplikasi;}
 
     public String getProductname() {return productname;}
-    public void setProductname(String productname) {this.custname = productname;}
+    public void setProductname(String productname) {this.productname = productname;}
 }
