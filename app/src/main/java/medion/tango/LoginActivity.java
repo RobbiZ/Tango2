@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void loginAction() {
         final String username = input_username.getText().toString().trim();
         final String password = input_password.getText().toString().trim();
+        final String token = SharedPrefManager.getInstance(this).getDeviceToken();
 
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setMessage("Loading...");
@@ -52,7 +53,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         /*Create handle for the RetrofitInstance interface*/
         BaseApiService service = RetrofitClient.getAPIService();
 
-        Call<ResponseBody> call = service.loginRequest(username, password);
+        Call<ResponseBody> call = service.loginRequest(username, password, token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {

@@ -63,18 +63,18 @@ public class ScheduleDetailActivity extends AppCompatActivity {
         productname1 = findViewById(R.id.productname1);
 
         Intent intent = getIntent();
-        cust = intent.getStringExtra(SharedKeys.KEY_CUSTNAME);
-        plas = intent.getStringExtra(SharedKeys.KEY_PLASMANAME);
-        addr = intent.getStringExtra(SharedKeys.KEY_ADDRESS);
-        cit = intent.getStringExtra(SharedKeys.KEY_CITY);
-        pho = intent.getStringExtra(SharedKeys.KEY_PHONE);
-        are = intent.getStringExtra(SharedKeys.KEY_AREA);
-        tan = intent.getStringExtra(SharedKeys.KEY_TANGGAL);
-        pop = intent.getStringExtra(SharedKeys.KEY_POPULASI);
-        jen = intent.getStringExtra(SharedKeys.KEY_JENIS);
-        umu = intent.getStringExtra(SharedKeys.KEY_UMUR);
-        apl = intent.getStringExtra(SharedKeys.KEY_APLIKASI);
-        pro = intent.getStringExtra(SharedKeys.KEY_PRODUCTNAME);
+        cust = intent.getStringExtra(SharedPrefManager.KEY_CUSTNAME);
+        plas = intent.getStringExtra(SharedPrefManager.KEY_PLASMANAME);
+        addr = intent.getStringExtra(SharedPrefManager.KEY_ADDRESS);
+        cit = intent.getStringExtra(SharedPrefManager.KEY_CITY);
+        pho = intent.getStringExtra(SharedPrefManager.KEY_PHONE);
+        are = intent.getStringExtra(SharedPrefManager.KEY_AREA);
+        tan = intent.getStringExtra(SharedPrefManager.KEY_TANGGAL);
+        pop = intent.getStringExtra(SharedPrefManager.KEY_POPULASI);
+        jen = intent.getStringExtra(SharedPrefManager.KEY_JENIS);
+        umu = intent.getStringExtra(SharedPrefManager.KEY_UMUR);
+        apl = intent.getStringExtra(SharedPrefManager.KEY_APLIKASI);
+        pro = intent.getStringExtra(SharedPrefManager.KEY_PRODUCTNAME);
 
         custname1.setText(cust);
         plasmaname1.setText("Nama :  " + plas);

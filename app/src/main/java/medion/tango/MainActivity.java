@@ -63,11 +63,6 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new PointFragment();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_notification:
-                    title.setText(R.string.title_notification);
-                    fragment = new NotificationFragment();
-                    loadFragment(fragment);
-                    return true;
             }
             return false;
         }

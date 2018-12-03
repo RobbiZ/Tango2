@@ -90,19 +90,19 @@ public class ScheduleFragment extends Fragment {
 
                         Intent intent = new Intent(getActivity(), ScheduleDetailActivity.class);
 
-                        intent.putExtra(SharedKeys.KEY_VACID, vacid);
-                        intent.putExtra(SharedKeys.KEY_CUSTNAME, custname);
-                        intent.putExtra(SharedKeys.KEY_PLASMANAME, plasmaname);
-                        intent.putExtra(SharedKeys.KEY_ADDRESS, address);
-                        intent.putExtra(SharedKeys.KEY_CITY, city);
-                        intent.putExtra(SharedKeys.KEY_PHONE, phone);
-                        intent.putExtra(SharedKeys.KEY_AREA, area);
-                        intent.putExtra(SharedKeys.KEY_TANGGAL, tanggal);
-                        intent.putExtra(SharedKeys.KEY_POPULASI, populasi);
-                        intent.putExtra(SharedKeys.KEY_JENIS, jenis);
-                        intent.putExtra(SharedKeys.KEY_UMUR, umur);
-                        intent.putExtra(SharedKeys.KEY_APLIKASI, aplikasi);
-                        intent.putExtra(SharedKeys.KEY_PRODUCTNAME, productname);
+                        intent.putExtra(SharedPrefManager.KEY_VACID, vacid);
+                        intent.putExtra(SharedPrefManager.KEY_CUSTNAME, custname);
+                        intent.putExtra(SharedPrefManager.KEY_PLASMANAME, plasmaname);
+                        intent.putExtra(SharedPrefManager.KEY_ADDRESS, address);
+                        intent.putExtra(SharedPrefManager.KEY_CITY, city);
+                        intent.putExtra(SharedPrefManager.KEY_PHONE, phone);
+                        intent.putExtra(SharedPrefManager.KEY_AREA, area);
+                        intent.putExtra(SharedPrefManager.KEY_TANGGAL, tanggal);
+                        intent.putExtra(SharedPrefManager.KEY_POPULASI, populasi);
+                        intent.putExtra(SharedPrefManager.KEY_JENIS, jenis);
+                        intent.putExtra(SharedPrefManager.KEY_UMUR, umur);
+                        intent.putExtra(SharedPrefManager.KEY_APLIKASI, aplikasi);
+                        intent.putExtra(SharedPrefManager.KEY_PRODUCTNAME, productname);
 
                         startActivity(intent);
                     }

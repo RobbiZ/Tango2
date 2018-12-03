@@ -14,7 +14,8 @@ public interface BaseApiService {
     @FormUrlEncoded
     @POST("mobileLogin.php")
     Call<ResponseBody> loginRequest(@Field("username") String username,
-                                    @Field("password") String password);
+                                    @Field("password") String password,
+                                    @Field("token") String token);
 
     @GET("readSchedule.php?")
     Call<List<ScheduleModel>> getSchedule(@Query("username") String username);
