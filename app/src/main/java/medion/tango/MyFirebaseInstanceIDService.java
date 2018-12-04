@@ -41,7 +41,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
                         if (status.equals(true)){
                             Toast.makeText(MyFirebaseInstanceIDService.this, "Token Refreshed" ,Toast.LENGTH_LONG).show();
                         } else if (status.equals(false)){
-                            Toast.makeText(MyFirebaseInstanceIDService.this, "Failed To Refresh Token" ,Toast.LENGTH_LONG).show();
+                            Toast.makeText(MyFirebaseInstanceIDService.this, "Failed To Save Token to Server" ,Toast.LENGTH_LONG).show();
                         }
 
                     } catch (JSONException e) {
@@ -54,7 +54,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
             @Override
             public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
-                Toast.makeText(MyFirebaseInstanceIDService.this, "Something went wrong... Failed To Refresh Token", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyFirebaseInstanceIDService.this, "Something went wrong... Failed To Save Token to Server", Toast.LENGTH_SHORT).show();
             }
         });
 
