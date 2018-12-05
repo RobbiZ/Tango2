@@ -22,6 +22,16 @@ public interface BaseApiService {
     Call<ResponseBody> tokenRefresh(@Field("username") String username,
                                     @Field("token") String token);
 
+    @FormUrlEncoded
+    @POST("saveRealisasi.php")
+    Call<ResponseBody> saveRealisasi(@Field("vacid") String vacid,
+                                     @Field("donumber") String donumber,
+                                     @Field("batch") String batch,
+                                     @Field("kmstart") String kmstart,
+                                     @Field("kmfinish") String kmfinish,
+                                     @Field("remark") String remark);
+
+
     @GET("readSchedule.php?")
     Call<List<ScheduleModel>> getSchedule(@Query("username") String username);
 

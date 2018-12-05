@@ -22,6 +22,7 @@ public class ScheduleDetailActivity extends AppCompatActivity {
     TextView aplikasi1;
     TextView productname1;
 
+    public static String vacid;
     String cust;
     String plas;
     String addr;
@@ -63,6 +64,7 @@ public class ScheduleDetailActivity extends AppCompatActivity {
         productname1 = findViewById(R.id.productname1);
 
         Intent intent = getIntent();
+        vacid = intent.getStringExtra(SharedPrefManager.KEY_VACID);
         cust = intent.getStringExtra(SharedPrefManager.KEY_CUSTNAME);
         plas = intent.getStringExtra(SharedPrefManager.KEY_PLASMANAME);
         addr = intent.getStringExtra(SharedPrefManager.KEY_ADDRESS);

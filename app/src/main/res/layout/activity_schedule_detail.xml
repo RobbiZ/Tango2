@@ -30,6 +30,7 @@
                     android:id="@+id/title_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
                     android:layout_weight="1"
                     android:text="Detail Jadwal Vaksinasi"
                     android:textAllCaps="false"

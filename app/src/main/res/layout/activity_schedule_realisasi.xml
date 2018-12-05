@@ -30,6 +30,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#ffffff"
                     android:text="Realisasi Vaksinasi"
                     android:textAllCaps="false"
                     android:textSize="20sp"
@@ -52,6 +53,7 @@
                 android:padding="8dp">
 
                 <EditText
+                    android:id="@+id/input_donumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -64,6 +66,7 @@
                     android:textColorHint="#80FFFFFF" />
 
                 <EditText
+                    android:id="@+id/input_batch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -76,6 +79,7 @@
                     android:textColorHint="#80FFFFFF" />
 
                 <EditText
+                    android:id="@+id/input_kmstart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -88,6 +92,7 @@
                     android:textColorHint="#80FFFFFF" />
 
                 <EditText
+                    android:id="@+id/input_kmfinish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -100,6 +105,7 @@
                     android:textColorHint="#80FFFFFF" />
 
                 <EditText
+                    android:id="@+id/input_remark"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -111,18 +117,19 @@
                     android:textColor="#80FFFFFF"
                     android:textColorHint="#80FFFFFF" />
 
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_rectangle_edittext"
-                    android:hint="RESCHEDULE?"
-                    android:textColor="#80FFFFFF"
-                    android:textColorHint="#80FFFFFF" />
+                <!--<Spinner-->
+                    <!--android:id="@+id/spinner"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_margin="8dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/bg_rectangle_edittext"-->
+                    <!--android:hint="RESCHEDULE?"-->
+                    <!--android:textColor="#80FFFFFF"-->
+                    <!--android:textColorHint="#80FFFFFF" />-->
 
                 <Button
+                    android:id="@+id/button_save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"

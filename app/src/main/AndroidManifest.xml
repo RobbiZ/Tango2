@@ -30,7 +30,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ScheduleRealisasiActivity">
+        <activity android:name=".ScheduleRealisasiActivity"
+            android:windowSoftInputMode="stateHidden">
             <!--  -->
         </activity>
 
