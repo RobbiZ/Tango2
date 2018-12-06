@@ -77,9 +77,9 @@ public class HistoryDetailActivity extends AppCompatActivity {
         kmstart = findViewById(R.id.kmstart);
         kmfinish = findViewById(R.id.kmfinish);
         remark = findViewById(R.id.remark);
-        reschedule = findViewById(R.id.reschedule);
-        newdate = findViewById(R.id.newdate);
-        cancel = findViewById(R.id.cancel);
+//        reschedule = findViewById(R.id.reschedule);
+//        newdate = findViewById(R.id.newdate);
+//        cancel = findViewById(R.id.cancel);
 
         Intent intent = getIntent();
         cust = intent.getStringExtra(SharedPrefManager.KEY_CUSTNAME);
