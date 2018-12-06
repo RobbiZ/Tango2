@@ -135,14 +135,14 @@ public class HistoryDetailActivity extends AppCompatActivity {
         if (rem != null && !rem.isEmpty()){
             remark.setText("Remark :  " + rem);
         }
-        if (res != null){
-            reschedule.setText("Reschedule :  " + res);
-        }
-        if (newd != null){
-            newdate.setText("Tanggal Reschedule :  " + newd);
-        }
-        if (can != null){
-            cancel.setText("Cancel :  " + can);
-        }
+//        if (res != null){
+//            reschedule.setText("Reschedule :  " + res);
+//        }
+//        if (newd != null){
+//            newdate.setText("Tanggal Reschedule :  " + newd);
+//        }
+//        if (can != null){
+//            cancel.setText("Cancel :  " + can);
+//        }
     }
 }

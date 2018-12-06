@@ -117,26 +117,26 @@
                     android:padding="8dp"
                     android:text="Remark :  -" />
 
-                <TextView
-                    android:id="@+id/reschedule"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Reschedule :  -" />
+                <!--<TextView-->
+                    <!--android:id="@+id/reschedule"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:text="Reschedule :  -" />-->
 
-                <TextView
-                    android:id="@+id/newdate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Tanggal Reschedule :  -" />
+                <!--<TextView-->
+                    <!--android:id="@+id/newdate"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:text="Tanggal Reschedule :  -" />-->
 
-                <TextView
-                    android:id="@+id/cancel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Cancel :  -" />
+                <!--<TextView-->
+                    <!--android:id="@+id/cancel"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:text="Cancel :  -" />-->
 
                 <TextView
                     android:id="@+id/data_vaksinasi"
