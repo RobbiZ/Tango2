@@ -26,6 +26,39 @@ public class MyNotificationManager {
         this.mCtx = mCtx;
     }
 
+    //the method will show a small notification
+    //parameters are title for message title, message for message text and an intent that will open
+    //when you will tap on the notification
+    public void showSmallNotification(String title, String message, Intent intent) {
+        PendingIntent resultPendingIntent =
+                PendingIntent.getActivity(
+                        mCtx,
+                        ID_SMALL_NOTIFICATION,
+                        intent,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(mCtx);
+        Notification notification;
+        notification = mBuilder.setSmallIcon(R.mipmap.ic_launcher).setTicker(title).setWhen(0)
+                .setAutoCancel(true)
+                .setContentIntent(resultPendingIntent)
+                .setContentTitle(title)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setLargeIcon(BitmapFactory.decodeResource(mCtx.getResources(), R.mipmap.ic_launcher))
+                .setContentText(message)
+                .build();
+
+        notification.flags |= Notification.FLAG_AUTO_CANCEL;
+        notification.defaults |= Notification.DEFAULT_SOUND;
+        notification.defaults |= Notification.DEFAULT_VIBRATE;
+        notification.priority |= Notification.PRIORITY_HIGH;
+
+        NotificationManager notificationManager = (NotificationManager) mCtx.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(ID_SMALL_NOTIFICATION, notification);
+    }
+
     //the method will show a big notification with an image
     //parameters are title for message title, message for message text, url of the big image and an intent that will open
     //when you will tap on the notification
@@ -58,39 +91,6 @@ public class MyNotificationManager {
 
         NotificationManager notificationManager = (NotificationManager) mCtx.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(ID_BIG_NOTIFICATION, notification);
-    }
-
-    //the method will show a small notification
-    //parameters are title for message title, message for message text and an intent that will open
-    //when you will tap on the notification
-    public void showSmallNotification(String title, String message, Intent intent) {
-        PendingIntent resultPendingIntent =
-                PendingIntent.getActivity(
-                        mCtx,
-                        ID_SMALL_NOTIFICATION,
-                        intent,
-                        PendingIntent.FLAG_UPDATE_CURRENT
-                );
-
-
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(mCtx);
-        Notification notification;
-        notification = mBuilder.setSmallIcon(R.mipmap.ic_launcher).setTicker(title).setWhen(0)
-                .setAutoCancel(true)
-                .setContentIntent(resultPendingIntent)
-                .setContentTitle(title)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(BitmapFactory.decodeResource(mCtx.getResources(), R.mipmap.ic_launcher))
-                .setContentText(message)
-                .build();
-
-        notification.flags |= Notification.FLAG_AUTO_CANCEL;
-        notification.defaults |= Notification.DEFAULT_SOUND;
-        notification.defaults |= Notification.DEFAULT_VIBRATE;
-        notification.priority |= Notification.PRIORITY_HIGH;
-
-        NotificationManager notificationManager = (NotificationManager) mCtx.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(ID_SMALL_NOTIFICATION, notification);
     }
 
     //The method will return Bitmap from an image URL

@@ -71,6 +71,7 @@
                     android:paddingRight="8dp"
                     android:paddingBottom="4dp"
                     android:text="Data Realisasi"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -87,35 +88,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="DO Number :  -" />
+                    android:text="DO Number :  -"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/batch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Batch Number :  -" />
+                    android:text="Batch Number :  -"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/kmstart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="KM Start :  -" />
+                    android:text="KM Start :  -"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/kmfinish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="KM Finish :  -" />
+                    android:text="KM Finish :  -"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/remark"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Remark :  -" />
+                    android:text="Remark :  -"
+                    android:textColor="@android:color/black" />
 
                 <!--<TextView-->
                     <!--android:id="@+id/reschedule"-->
@@ -147,6 +153,7 @@
                     android:paddingRight="8dp"
                     android:paddingBottom="4dp"
                     android:text="Data Vaksinasi"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -163,42 +170,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Tanggal" />
+                    android:text="Tanggal"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/populasi1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Populasi" />
+                    android:text="Populasi"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/jenis1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Jenis" />
+                    android:text="Jenis"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/umur1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Umur" />
+                    android:text="Umur"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/aplikasi1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Aplikasi" />
+                    android:text="Aplikasi"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/productname1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Produk" />
+                    android:text="Produk"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/data_plasma"
@@ -209,6 +222,7 @@
                     android:paddingRight="8dp"
                     android:paddingBottom="4dp"
                     android:text="Data Plasma"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -225,35 +239,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Nama" />
+                    android:text="Nama"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/address1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Alamat" />
+                    android:text="Alamat"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/city1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Kota" />
+                    android:text="Kota"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/phone1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Telepon" />
+                    android:text="Telepon"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/area1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Kategori Wilayah" />
+                    android:text="Kategori Wilayah"
+                    android:textColor="@android:color/black" />
 
             </LinearLayout>
 
