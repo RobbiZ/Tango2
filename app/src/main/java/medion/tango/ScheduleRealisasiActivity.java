@@ -77,47 +77,48 @@ public class ScheduleRealisasiActivity extends AppCompatActivity implements View
         final String kmstart = input_kmstart.getText().toString().trim();
         final String kmfinish = input_kmfinish.getText().toString().trim();
         final String remark = input_remark.getText().toString().trim();
-
-        progressDialog = new ProgressDialog(ScheduleRealisasiActivity.this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
-
+        String vacid = ScheduleDetailActivity.vacid;
         BaseApiService service = RetrofitClient.getAPIService();
 
-        String vacid = ScheduleDetailActivity.vacid;
-
-        Call<ResponseBody> call = service.saveRealisasi(vacid, donumber, batch, kmstart, kmfinish, remark);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                progressDialog.dismiss();
-                try {
+        if(!donumber.isEmpty() && !batch.isEmpty() && !kmstart.isEmpty() && !kmfinish.isEmpty() && !remark.isEmpty()){
+            progressDialog = new ProgressDialog(ScheduleRealisasiActivity.this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
+            Call<ResponseBody> call = service.saveRealisasi(vacid, donumber, batch, kmstart, kmfinish, remark);
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                    progressDialog.dismiss();
                     try {
-                        JSONObject json = new JSONObject(Objects.requireNonNull(response.body()).string());
-                        Boolean status = json.getBoolean("status");
-                        if (status.equals(true)){
-                            Toast.makeText(ScheduleRealisasiActivity.this, "Data Berhasil Disimpan " ,Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(ScheduleRealisasiActivity.this, MainActivity.class);
-                            finish();
-                            startActivity(intent);
-                        } else if (status.equals(false)){
-                            Toast.makeText(ScheduleRealisasiActivity.this, "Gagal Menyimpan Data" ,Toast.LENGTH_LONG).show();
-                        }
+                        try {
+                            JSONObject json = new JSONObject(Objects.requireNonNull(response.body()).string());
+                            Boolean status = json.getBoolean("status");
+                            if (status.equals(true)){
+                                Toast.makeText(ScheduleRealisasiActivity.this, "Data Berhasil Disimpan " ,Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(ScheduleRealisasiActivity.this, MainActivity.class);
+                                finish();
+                                startActivity(intent);
+                            } else if (status.equals(false)){
+                                Toast.makeText(ScheduleRealisasiActivity.this, "Gagal Menyimpan Data" ,Toast.LENGTH_LONG).show();
+                            }
 
-                    } catch (JSONException e) {
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } catch (IOException e){
                         e.printStackTrace();
                     }
-                } catch (IOException e){
-                    e.printStackTrace();
                 }
-            }
 
-            @Override
-            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
-                progressDialog.dismiss();
-                Toast.makeText(ScheduleRealisasiActivity.this, "Something went wrong... Please try later!", Toast.LENGTH_SHORT).show();
-            }
-        });
+                @Override
+                public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                    progressDialog.dismiss();
+                    Toast.makeText(ScheduleRealisasiActivity.this, "Something went wrong... Please try later!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else{
+            Toast.makeText(ScheduleRealisasiActivity.this, "Ada data yang belum lengkap, cek kembali" ,Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
