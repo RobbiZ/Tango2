@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView title;
     TextView user;
     Fragment fragment;
+    SharedPrefManager sharedPrefManager;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -29,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch(item.getItemId()) {
             case R.id.logout:
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+                startActivity(new Intent(MainActivity.this, LoginActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                 finish();
-                startActivity(intent);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -86,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
         title = findViewById(R.id.title);
         user = findViewById(R.id.username);
 
-        user.setText(LoginActivity.shareuser);
+        sharedPrefManager = new SharedPrefManager(this);
+        //user.setText(LoginActivity.shareuser);
+        user.setText(sharedPrefManager.getSPNama());
         title.setText(R.string.title_schedule);
         loadFragment(new ScheduleFragment());
     }

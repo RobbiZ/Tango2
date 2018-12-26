@@ -23,11 +23,13 @@ public class ScheduleFragment extends Fragment {
 
     private RecyclerView recyclerView;
     ProgressDialog progressDialog;
+    SharedPrefManager sharedPrefManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        sharedPrefManager = new SharedPrefManager(getActivity());
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading....");
         progressDialog.show();
@@ -35,7 +37,8 @@ public class ScheduleFragment extends Fragment {
         /*Create handle for the RetrofitInstance interface*/
         BaseApiService service = RetrofitClient.getAPIService();
 
-        String user = LoginActivity.shareuser;
+        //String user = LoginActivity.shareuser;
+        String user = sharedPrefManager.getSPNama();
 
         Call<List<ScheduleModel>> call = service.getSchedule(user);
         call.enqueue(new Callback<List<ScheduleModel>>() {

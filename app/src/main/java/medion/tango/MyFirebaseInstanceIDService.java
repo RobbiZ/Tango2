@@ -21,6 +21,7 @@ import retrofit2.Response;
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private static final String TAG = "MyFirebaseIIDService";
+    SharedPrefManager sharedPrefManager;
 
     @Override
     public void onTokenRefresh() {
@@ -28,7 +29,8 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         Log.d(TAG, "Refreshed token: " + refreshedToken);
         storeToken(refreshedToken);
 
-        String username = LoginActivity.shareuser;
+        //String username = LoginActivity.shareuser;
+        String username = sharedPrefManager.getSPNama();
         BaseApiService service = RetrofitClient.getAPIService();
         Call<ResponseBody> call = service.tokenRefresh(username, refreshedToken);
         call.enqueue(new Callback<ResponseBody>() {

@@ -28,15 +28,13 @@ public class SharedPrefManager {
     public static final String KEY_NEWDATE = "newDate";
     public static final String KEY_CANCEL = "cancel";
 
-    private static final String SHARED_PREF_NAME = "FCMSharedPref";
-    private static final String TAG_TOKEN = "tagtoken";
+    public static final String TAG_TOKEN = "tagtoken";
 
-    private static SharedPrefManager mInstance;
-    private static Context mCtx;
+    public static final String SHARED_PREF_NAME = "SharedPref";
+    public static final String SP_NAMA = "spNama";
+    public static final String SP_SUDAH_LOGIN = "spSudahLogin";
 
-    private SharedPrefManager(Context context) {
-        mCtx = context;
-    }
+    public static SharedPrefManager mInstance;
 
     public static synchronized SharedPrefManager getInstance(Context context) {
         if (mInstance == null) {
@@ -45,18 +43,41 @@ public class SharedPrefManager {
         return mInstance;
     }
 
+    SharedPreferences sp;
+    SharedPreferences.Editor spEditor;
+
+    public SharedPrefManager(Context context){
+        sp = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        spEditor = sp.edit();
+    }
+
+    public void saveSPString(String keySP, String value){
+        spEditor.putString(keySP, value);
+        spEditor.commit();
+    }
+
+    public String getSPNama(){
+        return sp.getString(SP_NAMA, "");
+    }
+
+    public void saveSPBoolean(String keySP, boolean value){
+        spEditor.putBoolean(keySP, value);
+        spEditor.commit();
+    }
+
+    public Boolean getSPSudahLogin(){
+        return sp.getBoolean(SP_SUDAH_LOGIN, false);
+    }
+
     //this method will save the device token to shared preferences
     public boolean saveDeviceToken(String token){
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(TAG_TOKEN, token);
-        editor.apply();
+        spEditor.putString(TAG_TOKEN, token);
+        spEditor.commit();
         return true;
     }
 
     //this method will fetch the device token from shared preferences
     public String getDeviceToken(){
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return  sharedPreferences.getString(TAG_TOKEN, null);
+        return  sp.getString(TAG_TOKEN, null);
     }
 }
