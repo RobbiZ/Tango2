@@ -88,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.username);
 
         sharedPrefManager = new SharedPrefManager(this);
-        //user.setText(LoginActivity.shareuser);
         user.setText(sharedPrefManager.getSPNama());
+        //user.setText(LoginActivity.shareuser);
         title.setText(R.string.title_schedule);
         loadFragment(new ScheduleFragment());
     }

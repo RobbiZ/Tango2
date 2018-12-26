@@ -1,6 +1,5 @@
 package medion.tango;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -22,9 +21,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static medion.tango.SharedPrefManager.SP_NAMA;
-import static medion.tango.SharedPrefManager.SP_SUDAH_LOGIN;
-
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -34,25 +30,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     ProgressDialog progressDialog;
     public static String shareuser;
     SharedPrefManager sharedPrefManager;
-    Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sharedPrefManager  = new SharedPrefManager(this);
 
         input_username = findViewById(R.id.input_username);
         input_password = findViewById(R.id.input_password);
         button_login = findViewById(R.id.button_login);
         button_login.setOnClickListener(this);
 
-        mContext = this;
-        sharedPrefManager = new SharedPrefManager(this);
-
         // Code berikut berfungsi untuk mengecek session, Jika session true ( sudah login )
         // maka langsung memulai MainActivity.
         if (sharedPrefManager.getSPSudahLogin()){
-            startActivity(new Intent(mContext, MainActivity.class)
+            startActivity(new Intent(LoginActivity.this, MainActivity.class)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
             finish();
         }
@@ -82,10 +75,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if (status.equals(true)){
                             Toast.makeText(LoginActivity.this, "Berhasil Login" ,Toast.LENGTH_LONG).show();
                             shareuser = username;
-                            sharedPrefManager.saveSPString(SP_NAMA, shareuser);
-                            // Shared Pref ini berfungsi untuk menjadi trigger session login
-                            sharedPrefManager.saveSPBoolean(SP_SUDAH_LOGIN, true);
-                            startActivity(new Intent(mContext, MainActivity.class)
+                            sharedPrefManager.saveSPString(SharedPrefManager.SP_NAMA, shareuser);
+                            sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class)
                                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                             finish();
                         } else if (status.equals(false)){

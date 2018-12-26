@@ -29,8 +29,9 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         Log.d(TAG, "Refreshed token: " + refreshedToken);
         storeToken(refreshedToken);
 
-        //String username = LoginActivity.shareuser;
+        sharedPrefManager = new SharedPrefManager(this);
         String username = sharedPrefManager.getSPNama();
+        //String username = LoginActivity.shareuser;
         BaseApiService service = RetrofitClient.getAPIService();
         Call<ResponseBody> call = service.tokenRefresh(username, refreshedToken);
         call.enqueue(new Callback<ResponseBody>() {
